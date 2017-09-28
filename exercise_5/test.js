@@ -12,6 +12,8 @@ driver.get('https://loghen41.github.io');
 // Try finding a way to verify the page text, and have the system run the follwing command if it finds the write text: console.log("text found");
 
 driver.findElement(By.className('fullInput')).sendKeys('Write some Code');
-driver.sleep(2000);
-driver.findElement(By.className('fullInput')).then(function(element) { console.log(element); })
+driver.findElement(By.className('fullInput')).getAttribute('value')
+	.then(function(text) {
+		console.log(text);
+	});
 driver.quit();
